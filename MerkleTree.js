@@ -12,9 +12,9 @@ const leaves = whilteListAddress.map((leave) => keccak256(leave));
 const merkleTree = new MerkleTree(leaves, keccak256, { sortPairs: true });
 const merkleRoot = merkleTree.getRoot().toString('hex');
 
-whilteListAddress.forEach((ad) => {
-    const proof = merkleTree.getHexProof(keccak256(ad));
-    console.log(`Leaves ${ad} Proof ${proof}`);
+whilteListAddress.forEach((leave) => {
+    const proof = merkleTree.getHexProof(keccak256(leave));
+    console.log(`Leaves ${leave} Proof ${proof}`);
 });
 
 console.log(`Merkle Root 0x${merkleRoot}`);
